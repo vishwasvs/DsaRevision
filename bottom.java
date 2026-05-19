@@ -1,8 +1,13 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
+import java.util.TreeMap;
 
-public class TopView {
+public class bottom {
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(1);
+         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
         root.right = new TreeNode(3);
 
@@ -29,6 +34,10 @@ public class TopView {
             int col = (int) node[0];
             TreeNode val = (TreeNode) node[1];
 
+            if(map.containsKey(col))
+            {
+                map.put(col, val.data);
+            }
             map.putIfAbsent(col, val.data);
 
             if(val.left!=null)
